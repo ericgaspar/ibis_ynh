@@ -44,20 +44,10 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
-    [install.language]
-    ask.en = "Choose the application language"
-    ask.fr = "Choisissez la langue de l'application"
-    type = "select"
-    choices = ["fr", "en"]
-    default = "fr"
-
     [install.admin]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "user"
 
     [install.password]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    # Note that user-provided passwords questions are not automatically saved as setting
     help.en = "Use the help field to add an information for the admin about this question."
     help.fr = "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
     type = "password"
@@ -67,35 +57,26 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
+    in_subdir = false
+    rename = "ibis"
     url = "https://github.com/Nutomic/ibis/releases/download/0.3.1/ibis.gz"
     sha256 = "52edc6d5bcf0e6b76f02dec1c61d26c6663e0f1463d4db58844bc889412d9148"
 
-    # autoupdate.strategy = "latest_github_tag"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
-    # This will provision/deprovision a unix system user
 
     [resources.install_dir]
-    # This will create/remove the install dir as /var/www/$app
-    # and store the corresponding setting $install_dir
 
     [resources.data_dir]
-    # This will create/remove the data dir as /home/yunohost.app/$app
-    # and store the corresponding setting $data_dir
 
     [resources.permissions]
-    # This will configure SSOwat permission for $domain/$path/
-    # The initial allowed group of user is configured via the init_main_permission question (public=visitors, private=all_users)
     main.url = "/"
 
     [resources.ports]
-    # This will pick a random port for reverse-proxying and store it as the $port setting
 
     [resources.apt]
-    # This will automatically install/uninstall the following apt packages
-    # and implicitly define the $phpversion setting as 8.0 (if phpX.Y-foobar dependencies are listed)
-    packages = "mariadb-server, deb1, deb2, php8.3-foo, php8.3-bar"
+    packages = "postgresql"
 
     [resources.database]
-    # This will automatically provision/deprovison a MySQL DB and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
-    type = "mysql"
+    type = "postgresql"

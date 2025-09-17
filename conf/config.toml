@@ -1,0 +1,12 @@
+[federation]
+# The domain where your ibis instance will be available
+domain = "__DOMAIN__"
+
+[database]
+# The database connection url. use the password set above
+connection_url = "postgres://__DB_USER__:__DB_PWD__@127.0.0.1:5432/__DB_NAME__"
+
+[setup]
+# Username and password for the automatically created admin account. Important to set a secure password here, as password change functionality is not yet implemented. This section can be removed after first start.
+admin_username = "__ADMIN__"
+admin_password = "__PASSWORD__"
