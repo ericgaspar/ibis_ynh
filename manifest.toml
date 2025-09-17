@@ -52,10 +52,8 @@ ram.runtime = "50M"
     in_subdir = false
     rename = "ibis"
 
-    url = "https://github.com/Nutomic/ibis/releases/download/0.2.4/ibis.gz"
-    sha256 = "fc7c2832f81d163271228a408f976af0b7f24ea2b01609a47080d7766d95898c"
-    #url = "https://github.com/Nutomic/ibis/releases/download/0.3.1/ibis.gz"
-    #sha256 = "52edc6d5bcf0e6b76f02dec1c61d26c6663e0f1463d4db58844bc889412d9148"
+    url = "https://github.com/Nutomic/ibis/releases/download/0.3.1/ibis.gz"
+    sha256 = "52edc6d5bcf0e6b76f02dec1c61d26c6663e0f1463d4db58844bc889412d9148"
 
     autoupdate.strategy = "latest_github_tag"
 
